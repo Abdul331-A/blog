@@ -1,8 +1,18 @@
 import { Link } from "react-router-dom";
 
 export default function Create() {
+  
+ const create = (e) => {
+  e.preventDefault(); 
+  const title=e.target.title.value;
+  const content=e.target.content.value;
+  // console.log(title,content);
+  const res= await fetch('http://localhost:3000/blogs');
+
+};
+
   return (
-    <form>
+    <form onSubmit={create}>
       <h1>Create</h1>
       <Link to='/'>Back</Link>
       <br />
@@ -14,7 +24,7 @@ export default function Create() {
       <br />
       <textarea name='content'></textarea>
       <br />
-      <input type='submit' value='Create' />
+      <button type='submit'  >Create</button>
     </form>
   );
 }
