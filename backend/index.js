@@ -9,6 +9,10 @@ const port = 3000;
 app.use(cors());
 app.use(express.json());
 
+app.get("/", (req, res) => {
+  res.send("Welcome to the Blog API!");
+});
+
 app.post("/blogs", (req, res) => {
   const { title, content } = req.body;
 
