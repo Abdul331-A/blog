@@ -7,3 +7,5 @@ export async function getBlogs() {
     
 }
 // console.log(data);
+
+
